@@ -22,7 +22,7 @@ function writePassword() {
 
 function generatePassword() {
   //ask the user for the password's criteria
-  var length = prompt("what is the minimum length of password?","type a number between 8-128")
+  var length = prompt("what is the minimum length of password?","type a number between 8-128");
   //parse the user's input to make sure a valid number was entered.
   // if (!(parseInt(length) > 8 && parseInt(length) < 128)) {
   //   length = prompt("Please enter a valid number","type a number between 8-128")
@@ -33,14 +33,17 @@ function generatePassword() {
   var special = confirm("does your password need to include special characters?");
   
   // log in the console all the values from the user for debugging
-  console.log(password, length, lowercase, capitals, numbers, special)
+  console.log(password, length, lowercase, capitals, numbers, special);
+
+  //clear the arrayValid variable
+  arrayValid = "";
 
   // fill the variable arrayValid with the user's criteria
   if (lowercase == true) {
   arrayValid += arrayLower;
   }
   if (capitals == true) {
-    arrayValid += arrayLower;
+    arrayValid += arrayUpper;
   }
   if (numbers == true) {
     arrayValid += arrayNum;
@@ -51,7 +54,7 @@ function generatePassword() {
  //log the approved characters in the console
  console.log(arrayValid);
 
- //zero out the password variable
+ //clear the password variable
  password = "";
   //create a routine that takes the pass length, approved string and creates a password
   //using a for loop, for each position in password length create a string from characters in the arrayValid string 
@@ -62,7 +65,6 @@ function generatePassword() {
     // add selected characters to the password variable
     password += arrayValid.substring(random, random + 1);
   }
-console.log(password)
   //return generated password
   return password;
 }
