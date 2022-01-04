@@ -32,9 +32,6 @@ function generatePassword() {
   var numbers = confirm("does your password need to include numbers?");
   var special = confirm("does your password need to include special characters?");
   
-  // log in the console all the values from the user for debugging
-  console.log(password, length, lowercase, capitals, numbers, special);
-
   //clear the arrayValid variable
   arrayValid = "";
 
@@ -51,12 +48,11 @@ function generatePassword() {
   if (special == true) {
     arrayValid += arraySpec;
   }
- //log the approved characters in the console
- console.log(arrayValid);
-
- //clear the password variable
+ 
+  //clear the password variable
  password = "";
-  //create a routine that takes the pass length, approved string and creates a password
+
+ //create a routine that takes the pass length, approved string and creates a password
   //using a for loop, for each position in password length create a string from characters in the arrayValid string 
   for (var i = 0; i < length; i++) {
     //create a random number based on the length of arrayValid, to select a random character in the string
